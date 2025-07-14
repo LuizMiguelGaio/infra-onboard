@@ -14,6 +14,7 @@ Function Log {
     param([string]$msg)
     $timestamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
     Add-Content -Path $logPath -Value "$timestamp :: [CREATE_RESTORE_POINT] $msg"
+    Write-Host $msg
 }
 
 # Verifica e ativa protecao do sistema na unidade C

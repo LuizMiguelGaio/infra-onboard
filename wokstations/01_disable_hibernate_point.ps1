@@ -14,6 +14,7 @@ Function Log {
     param([string]$msg)
     $timestamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
     Add-Content -Path $logPath -Value "$timestamp :: [DISABLE_HIBERNATE_POINT] $msg"
+    Write-Host $msg
 }
 
 # Executar como administrador

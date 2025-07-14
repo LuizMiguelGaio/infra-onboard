@@ -14,51 +14,52 @@ Function Log {
     param([string]$msg)
     $timestamp = Get-Date -Format 'yyyy-MM-dd HH:mm:ss'
     Add-Content -Path $logPath -Value "$timestamp :: [INSTALL_WINDOWS_UPDATE] $msg"
+    Write-Host $msg
 }
 
-# Verificar se modulo PSWindowsUpdate já está instalado
+# Verificar se modulo PSWindowsUpdate ja esta instalado
 if (-not (Get-Module -ListAvailable -Name PSWindowsUpdate)) {
     try {
-        Log "PSWindowsUpdate não encontrado. Instalando módulo..."
+        Log "PSWindowsUpdate nao encontrado. Instalando modulo..."
         Install-Module -Name PSWindowsUpdate -Force -Scope CurrentUser -ErrorAction Stop
-        Log "Módulo PSWindowsUpdate instalado com sucesso."
+        Log "Modulo PSWindowsUpdate instalado com sucesso."
     } catch {
         Log "Erro ao instalar PSWindowsUpdate: $_"
-        Write-Error "Falha crítica ao instalar módulo. Abortando."
+        Write-Error "Falha critica ao instalar modulo. Abortando."
         exit 1
     }
 } else {
-    Log "Módulo PSWindowsUpdate já instalado."
+    Log "Modulo PSWindowsUpdate ja instalado."
 }
 
-# Importar módulo
+# Importar modulo
 Import-Module PSWindowsUpdate -Force
 
-# Avisar sobre reinicialização automática
-Write-Warning "Este script pode reiniciar automaticamente o sistema após aplicar as atualizações."
+# Avisar sobre reinicializacao automatica
+Write-Warning "Este script pode reiniciar automaticamente o sistema apos aplicar as atualizacoes."
 $response = Read-Host "Deseja continuar? (S/N)"
 if ($response -ne 'S' -and $response -ne 's') {
-    Log "Execução cancelada pelo usuário."
-    Write-Host "Execução cancelada." -ForegroundColor Red
+    Log "Execucao cancelada pelo usuario."
+    Write-Host "Execucao cancelada." -ForegroundColor Red
     exit
 }
 
 # Verificar atualizações
 try {
-    Write-Host "Buscando atualizações..." -ForegroundColor Yellow
-    Log "Iniciando verificação de atualizações..."
+    Write-Host "Buscando atualizacoes..." -ForegroundColor Yellow
+    Log "Iniciando verificação de atualizacoes..."
     
     $updates = Get-WindowsUpdate -AcceptAll
     if ($updates) {
-        Log "$($updates.Count) atualizações encontradas. Iniciando instalação..."
+        Log "$($updates.Count) atualizações encontradas. Iniciando instalacao..."
         Get-WindowsUpdate -AcceptAll -Install -AutoReboot
-        Log "Atualizações instaladas com sucesso."
+        Log "Atualizacoes instaladas com sucesso."
     } else {
-        Log "Nenhuma atualização necessária."
-        Write-Host "Sistema já está atualizado." -ForegroundColor Green
+        Log "Nenhuma atualizacao necessaria."
+        Write-Host "Sistema ja está atualizado." -ForegroundColor Cyan
     }
 } catch {
-    Log "Erro ao buscar ou instalar atualizações: $_"
-    Write-Error "Falha ao aplicar atualizações."
+    Log "Erro ao buscar ou instalar atualizacoes: $_"
+    Write-Error "Falha ao aplicar atualizacoes."
     exit 1
 }
