@@ -23,7 +23,7 @@ Enable-ComputerRestore -Drive "C:\" 2>$null
 # Cria ponto de restauracao
 try {
     Checkpoint-Computer -Description "Ponto inicial - Pos setup" -RestorePointType MODIFY_SETTINGS
-    Write-Host "Ponto de restauracao criado com sucesso." -ForegroundColor Cyan
+    Write-Host "`nPonto de restauracao criado com sucesso." -ForegroundColor Cyan
 }
 catch {
     Write-Warning "Nao foi possivel criar o ponto de restauracao. Verifique se a protecao do sistema estao ativa." 

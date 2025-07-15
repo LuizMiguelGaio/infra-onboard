@@ -39,7 +39,6 @@ Import-Module PSWindowsUpdate -Force
 Write-Warning "Este script pode reiniciar automaticamente o sistema apos aplicar as atualizacoes."
 $response = Read-Host "Deseja continuar? (S/N)"
 if ($response -ne 'S' -and $response -ne 's') {
-    Log "Execucao cancelada pelo usuario."
     Write-Host "Execucao cancelada." -ForegroundColor Red
     exit
 }
@@ -47,15 +46,13 @@ if ($response -ne 'S' -and $response -ne 's') {
 # Verificar atualizações
 try {
     Write-Host "Buscando atualizacoes..." -ForegroundColor Yellow
-    Log "Iniciando verificação de atualizacoes..."
     
     $updates = Get-WindowsUpdate -AcceptAll
     if ($updates) {
         Log "$($updates.Count) atualizações encontradas. Iniciando instalacao..."
         Get-WindowsUpdate -AcceptAll -Install -AutoReboot
-        Log "Atualizacoes instaladas com sucesso."
+        Log "`nAtualizacoes instaladas com sucesso."
     } else {
-        Log "Nenhuma atualizacao necessaria."
         Write-Host "Sistema ja está atualizado." -ForegroundColor Cyan
     }
 } catch {

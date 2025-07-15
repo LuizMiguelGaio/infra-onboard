@@ -43,4 +43,4 @@ Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "ScreenSaverIsSecure"
 Set-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "ScreenSaveTimeOut" -Value "0"
 
 # Mensagem final
-Write-Host "`Configuracoes de hibernacao e economia de energia desativadas com sucesso." -ForegroundColor Cyan
+Write-Host "`nConfiguracoes de hibernacao e economia de energia desativadas com sucesso." -ForegroundColor Cyan
