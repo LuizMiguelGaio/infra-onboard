@@ -6,8 +6,6 @@ param(
     [string]$ConfigFile = ".\04_programs.txt"  # Caminho padrao para o arquivo de programas
 )
 
-# Configuraes temporarias de execucao
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned -Force
 
 # Verifica se o arquivo de configuracao existe
 if (-not (Test-Path $ConfigFile)) {

@@ -2,9 +2,6 @@
 # REQUISITOS: Executar como administrador.
 # USO: ./06_join_domain.ps1
 
-# Habilitar execucao temporaria (so altera para a sessao atual sem impacto permanente)
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned -Force
-
 # Definindo onde o log sera salvo
 $scriptPath = $MyInvocation.MyCommand.Path
 $scriptDir = Split-Path -Parent $scriptPath
