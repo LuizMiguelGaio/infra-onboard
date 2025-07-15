@@ -13,7 +13,7 @@
 #### **1. Baixar o Repositório**  
 - Acesse o repositório: **[https://github.com/LuizMiguelGaio/legacy-windows-automation](https://github.com/LuizMiguelGaio/legacy-windows-automation)**  
 - Baixe o código (Clone ou Download → "Download ZIP")  
-- Extraia a pasta em um local de fácil acesso (ex.: `C:\Automacao`)  
+- Extraia a pasta em um local de fácil acesso (ex.: `C:\`)  
 
 #### **2. Habilitar Execução de Scripts (Temporário)**  
 Abra o PowerShell **como Administrador** e execute:  
@@ -34,14 +34,7 @@ cd "C:\legacy-windows-automation-main\wokstations"  # Ajuste o caminho conforme 
 #### **4. Usando o Menu Interativo**  
 - O script `onboardingMenu.ps1` chamará outros scripts automaticamente.  
 - Todos os scripts rodarão **sem erros de política de execução**, pois herdam a configuração da sessão atual.  
-
----
-
-graph TD
-  A[PowerShell Admin] --> B[Set ExecutionPolicy]
-  B --> C[Execute Menu]
-  C --> D[Scripts Automatizados]
-
+- Após reiniciar o sistema na opção 3,5 ou 6 execute o powershell como administrador, seta pra cima para aproveitar o buffer antigo e executar o menu de maneira mais rápida.
 ---
 
 ### **Solução de Problemas**  
