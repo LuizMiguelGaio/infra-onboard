@@ -18,16 +18,16 @@
 #### **2. Habilitar Execução de Scripts (Temporário)**  
 Abra o PowerShell **como Administrador** e execute:  
 ```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned -Force
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
 ```  
 ⚠ **Importante**:  
 - Essa configuração vale apenas **para esta sessão** (não persiste após fechar o PowerShell).  
 - Não altera políticas de segurança do sistema permanentemente.  
-
+1
 #### **3. Navegar até a Pasta e Executar o Menu**  
 No **mesmo PowerShell** (já com permissão temporária), digite:  
 ```powershell
-cd C:\Automacao\legacy-windows-automation-main\workstations  # Ajuste o caminho conforme sua extração
+cd "C:\legacy-windows-automation-main\wokstations"  # Ajuste o caminho conforme sua extração
 .\onboardingMenu.ps1
 ```  
 
