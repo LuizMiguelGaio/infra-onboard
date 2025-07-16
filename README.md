@@ -1,4 +1,4 @@
-# legacy-windows-automation
+# postinstall-windows-kit
 📌 Coleção de scripts PowerShell para automação em ambientes legados (Windows 7/10, Server 2012+).  
 🔧 Simplifica setup de workstations, servidores on-premise e integração com domínio Active Directory.  
 
