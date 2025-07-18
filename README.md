@@ -15,12 +15,12 @@ Este projeto oferece uma coleção modular de scripts PowerShell para preparar e
 
 ---
 
-## 📁 Estrutura
+## Estrutura
 
 ```
 
 infra-onboard/
-├── workstation/       # Scripts para workstations (clientes)
+├── workstation/       # Scripts para workstations (Testes)
 ├── server/            # Scripts para servidores (em desenvolvimento)
 ├── modules/           # Funções reutilizáveis em formato .psm1
 ├── logs/              # Local onde logs são salvos por máquina
