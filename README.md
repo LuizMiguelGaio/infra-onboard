@@ -6,7 +6,7 @@ Este projeto oferece uma coleção modular de scripts PowerShell para preparar e
 
 ---
 
-## 🎯 Objetivos
+## Objetivos
 
 - Automatizar o pós-formatação de máquinas Windows.
 - Padronizar configuração e renomeação de estações.
@@ -29,7 +29,7 @@ infra-onboard/
 
 ---
 
-## 📦 Módulos
+## Módulos
 
 Todos os scripts compartilham funções comuns localizadas em `/modules`.
 
@@ -38,7 +38,7 @@ Todos os scripts compartilham funções comuns localizadas em `/modules`.
 
 ---
 
-## 🔧 Uso
+## Uso
 
 Execute os scripts individualmente ou encadeie-os conforme necessário:
 
@@ -56,7 +56,7 @@ cd .\workstation\
 
 ---
 
-## 🧱 Requisitos
+## Requisitos
 
 * PowerShell 5.1+ ou PowerShell Core (dependendo do ambiente)
 * Execução de scripts habilitada (use `Set-ExecutionPolicy -Scope Process Bypass` para testes)
@@ -64,7 +64,7 @@ cd .\workstation\
 
 ---
 
-## 📌 Futuro
+## Futuro
 
 * Scripts para onboarding de servidores Windows (`server/`)
 * Integração com ambientes híbridos (Azure AD, Intune, etc.)
