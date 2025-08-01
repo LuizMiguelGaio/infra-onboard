@@ -1,4 +1,5 @@
-chrome
-7zip
-sumatrapdf
-notepadplusplus
+Google.Chrome
+Adobe.Acrobat.Reader.64-bit
+RARLab.WinRAR
+Oracle.JavaRuntimeEnvironment
+Mozilla.Firefox.br
