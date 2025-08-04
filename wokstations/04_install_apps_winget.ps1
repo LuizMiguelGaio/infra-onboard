@@ -1,5 +1,5 @@
 ﻿# DESCRICAO: Instala apps através do winget usando um arquivo de configuração
-# REQUISITOS: Executar como administrador, Windows com winget instalado
+# REQUISITOS: Executar como administrador, Windows com acesso à internet e permissões para instalar pacotes da Microsoft Store
 # USO: ./04_install_apps_winget.ps1 -ConfigFile .\04_programs.txt
 
 param(
@@ -30,10 +30,34 @@ catch {
     exit 1
 }
 
-# Verifica se winget está disponível
+# Verifica se winget está disponível, senão tenta instalar
 if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
-    Write-Error "Winget não está disponível neste sistema. Atualize o App Installer pela Microsoft Store."
-    exit 1
+    Write-Host "Winget não encontrado. Tentando instalar o App Installer..." -ForegroundColor Yellow
+
+    try {
+        $installerPath = "$env:TEMP\AppInstaller.appxbundle"
+
+        # Baixa o App Installer oficial
+        Invoke-WebRequest -Uri "https://aka.ms/getwinget" -OutFile $installerPath -UseBasicParsing
+
+        # Instala o pacote
+        Add-AppxPackage -Path $installerPath
+
+        # Aguarda a instalação
+        Start-Sleep -Seconds 10
+
+        # Verifica novamente
+        if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+            throw "Winget ainda não está disponível após a tentativa de instalação."
+        }
+
+        Write-Host "Winget instalado com sucesso!" -ForegroundColor Green
+    }
+    catch {
+        Write-Error "Falha ao instalar o Winget automaticamente: $_"
+        Write-Host "Tente instalar manualmente via Microsoft Store: https://aka.ms/getwinget" -ForegroundColor DarkYellow
+        exit 1
+    }
 }
 
 # Início da instalação
