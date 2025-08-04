@@ -3,7 +3,7 @@
 # USO: ./04_install_apps_winget.ps1 -ConfigFile .\04_programs.txt
 
 param(
-    [string]$ConfigFile = ".\04_programs.txt"
+    [string]$ConfigFile = ".\03_programs.txt"
 )
 
 # Verifica se o arquivo existe
