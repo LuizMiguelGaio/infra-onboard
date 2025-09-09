@@ -2,4 +2,4 @@ Google.Chrome
 Adobe.Acrobat.Reader.64-bit
 RARLab.WinRAR
 Oracle.JavaRuntimeEnvironment
-Mozilla.Firefox.br
+Microsoft.Office

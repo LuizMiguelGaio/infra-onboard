@@ -16,8 +16,8 @@ Automatização pensada para ambientes legados Windows. O objetivo é acelerar a
 
 #### 1. Preparar o Ambiente
 
-Antes de rodar o menu de instalação de aplicativos (02\_installApps.ps1), execute primeiro o arquivo:
-02\_a\_InstalarMicrosoft.DesktopAppInstaller\_winget
+Antes de rodar o menu de instalação de aplicativos (02\_installApps.ps1), execute o download do winget:
+https://learn.microsoft.com/en-us/windows/package-manager/winget/ 
 Isso garante que o winget esteja pronto para uso.
 
 #### 2. Baixar o Repositório
