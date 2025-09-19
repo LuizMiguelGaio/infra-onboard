@@ -40,7 +40,7 @@ Nota:
 
 No mesmo PowerShell, navegue até a pasta:
 cd "C:\infra-onboard-main\workstations"  # Ajuste se necessário
-.\onboardingMenu.ps1
+.\00_OnboardingMenu.ps1
 
 #### 5. Usando o Menu Interativo
 
