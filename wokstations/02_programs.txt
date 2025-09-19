@@ -1,5 +1,3 @@
 Google.Chrome
 Adobe.Acrobat.Reader.64-bit
 RARLab.WinRAR
-Oracle.JavaRuntimeEnvironment
-Microsoft.Office

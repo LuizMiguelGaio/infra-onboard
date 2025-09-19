@@ -4,8 +4,7 @@ function Show-Menu {
     Write-Host "=== ONBOARDING DE MAQUINA ==="
     Write-Host "1. Desabilidar Hibernação GERAL"
     Write-Host "2. Instalar Programas/Apps"
-    Write-Host "3. Consertar caminho do JAVA"
-    Write-Host "4. Atualizar Windows"
+    Write-Host "3. Atualizar Windows"
     Write-Host "Q. Sair"
     Write-Host "============================="
 }
@@ -36,10 +35,7 @@ do {
             Invoke-ScriptWithReturn -ScriptPath "$PSScriptRoot\02_install_apps_winget.ps1"
         }
         "3" {
-            Invoke-ScriptWithReturn -ScriptPath "$PSScriptRoot\03_Set-JavaHome.ps1"
-        }
-        "4" {
-            Invoke-ScriptWithReturn -ScriptPath "$PSScriptRoot\04_install_windows_updates.ps1"
+            Invoke-ScriptWithReturn -ScriptPath "$PSScriptRoot\03_install_windows_updates.ps1"
         }
     }
 } until ($opcao -eq "q" -or $opcao -eq "Q")
